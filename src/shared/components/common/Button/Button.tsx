@@ -1,6 +1,6 @@
-import { ButtonProps, Button as MuiButton } from '@mui/material';
+import { ButtonProps, Button as MantineButton } from '@mantine/core';
 
 type Props = ButtonProps;
 export const Button = (props: Props) => {
-  return <MuiButton {...props} />;
+  return <MantineButton {...props} />;
 };

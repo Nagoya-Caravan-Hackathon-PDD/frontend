@@ -12,12 +12,13 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@emotion/react": "^11.11.1",
-    "@emotion/styled": "^11.11.0",
-    "@mui/material": "^5.14.17",
+    "@mantine/core": "^7.2.1",
+    "@mantine/hooks": "^7.2.1",
+    "@storybook/addon-styling-webpack": "^0.0.5",
     "next": "14.0.2",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "storybook-dark-mode": "^3.0.1"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.5.3",

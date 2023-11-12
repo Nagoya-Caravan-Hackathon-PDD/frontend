@@ -27,7 +27,7 @@ export default meta;
 
 type Story = StoryObj<typeof Button>;
 
-export const Primary: Story = {
+export const Main: Story = {
   args: {
     color: undefined,
     p: undefined,

@@ -1,10 +1,10 @@
-import { Button } from '@/shared/components/common/Button';
-import { Guard } from '@/shared/components/features/Guard/Guard';
+import { Start } from './_components/Start/Start';
+import { GlobalNavigation } from '@/shared/components/features/GlobalNavigation';
 
 export default function Home() {
   return (
-    <Guard>
-      <Button>Button</Button>
-    </Guard>
+    <GlobalNavigation>
+      <Start />
+    </GlobalNavigation>
   );
 }

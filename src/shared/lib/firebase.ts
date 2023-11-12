@@ -26,6 +26,7 @@ export const signIn = async () => {
     const result = await signInWithPopup(auth, provider);
     const credential = GithubAuthProvider.credentialFromResult(result);
     const token = credential!.accessToken;
+    console.debug(result.user);
     return { token: token, ...result.user };
   } catch (error) {
     throw error;

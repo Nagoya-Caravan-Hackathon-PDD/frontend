@@ -8,6 +8,6 @@ const meta: Meta<typeof Text> = {
 export default meta;
 type Story = StoryObj<typeof Text>;
 
-export const FirstStory: Story = {
+export const Main: Story = {
   render: () => <Text>Text</Text>,
 };

@@ -33,7 +33,7 @@ export const AuthProvider = ({ children }: Props) => {
       const currentUser: CurrentUser = {
         token: user.token,
         uid: user.uid,
-        userName: undefined,
+        userName: user.displayName ?? undefined,
       };
       setCurrentUser(currentUser);
       setFirebaseUser(currentUser);

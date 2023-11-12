@@ -1,0 +1,1 @@
+export { githubColorTheme } from './github';

@@ -1,0 +1,40 @@
+import { MantineThemeColorsOverride } from '@mantine/core';
+
+export const githubColorTheme: MantineThemeColorsOverride = {
+  gray: [
+    '#edf6ff',
+    '#e2e7ed',
+    '#c8cdd2',
+    '#acb1b8',
+    '#9399a1',
+    '#838a94',
+    '#7a838e',
+    '#68707b',
+    '#5b6371',
+    '#4a5766',
+  ],
+  blue: [
+    '#e3f6ff',
+    '#cceaff',
+    '#9ad0ff',
+    '#64b6ff',
+    '#3aa0fe',
+    '#1f92fe',
+    '#098bff',
+    '#0078e4',
+    '#006bcd',
+    '#005cb5',
+  ],
+  green: [
+    '#eefbf2',
+    '#dcf5e4',
+    '#b5ebc4',
+    '#8ae0a2',
+    '#68d885',
+    '#53d273',
+    '#47d069',
+    '#39b858',
+    '#2fa34d',
+    '#208d3f',
+  ],
+};

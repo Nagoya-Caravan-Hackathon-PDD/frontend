@@ -15,9 +15,13 @@
     "@mantine/core": "^7.2.1",
     "@mantine/hooks": "^7.2.1",
     "@storybook/addon-styling-webpack": "^0.0.5",
+    "@tabler/icons-react": "^2.40.0",
+    "firebase": "^10.6.0",
     "next": "14.0.2",
     "react": "^18",
     "react-dom": "^18",
+    "recoil": "^0.7.7",
+    "recoil-persist": "^5.1.0",
     "storybook-dark-mode": "^3.0.1"
   },
   "devDependencies": {

@@ -2,7 +2,9 @@ import '@mantine/core/styles.css';
 import { ColorSchemeScript, MantineProvider } from '@mantine/core';
 import { Inter } from 'next/font/google';
 import type { Metadata } from 'next';
+import { AuthProvider } from '@/shared/components/hooks/auth/AuthContext';
 import { theme } from '@/shared/lib/mantine/theme';
+import { RecoilRoot } from '@/shared/lib/recoil/RecoilRoot';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -22,7 +24,11 @@ export default function RootLayout({
         <ColorSchemeScript />
       </head>
       <body className={inter.className}>
-        <MantineProvider theme={theme}>{children}</MantineProvider>
+        <RecoilRoot>
+          <AuthProvider>
+            <MantineProvider theme={theme}>{children}</MantineProvider>
+          </AuthProvider>
+        </RecoilRoot>
       </body>
     </html>
   );

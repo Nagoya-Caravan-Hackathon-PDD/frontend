@@ -45,8 +45,8 @@ export const AuthProvider = ({ children }: Props) => {
   const logout = useCallback(async () => {
     try {
       await signOut();
-      setCurrentUser({});
-      setFirebaseUser({});
+      setCurrentUser({ token: null });
+      setFirebaseUser({ token: null });
     } catch (error) {
       throw error;
     }

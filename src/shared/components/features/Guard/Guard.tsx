@@ -13,7 +13,7 @@ export const Guard = ({ children }: Props) => {
   const route = useRouter();
 
   useEffect(() => {
-    if (currentUser.token === undefined) {
+    if (currentUser.token === null) {
       route.push('/sign_in');
     }
   }, [currentUser, route]);

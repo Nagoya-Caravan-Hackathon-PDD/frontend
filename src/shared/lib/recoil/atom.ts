@@ -6,6 +6,6 @@ const { persistAtom } = recoilPersist();
 
 export const firebaseUserState = atom<CurrentUser>({
   key: 'firebaseAuth',
-  default: undefined,
+  default: { token: null },
   effects: [persistAtom],
 });

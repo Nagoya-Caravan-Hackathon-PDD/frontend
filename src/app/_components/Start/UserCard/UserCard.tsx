@@ -10,10 +10,10 @@ type Props = {
 };
 export const UserCard = ({ currentUser }: Props) => {
   return (
-    <Card withBorder shadow="sm" p={64}>
+    <Card p={'xl'}>
       <Stack gap={30}>
         <Card.Section>
-          <Center>
+          <Center p={'md'}>
             {currentUser.userIcon ? (
               <Image
                 alt={currentUser.userName ?? 'icon'}

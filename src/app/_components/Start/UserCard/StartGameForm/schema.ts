@@ -1,7 +1,7 @@
 import { ZodErrorMap, z } from 'zod';
 
 const errorMap: ZodErrorMap = () => {
-  return { message: "Enter your GitMon's name" };
+  return { message: "GitMon's name is required" };
 };
 
 export const schema = z.object({

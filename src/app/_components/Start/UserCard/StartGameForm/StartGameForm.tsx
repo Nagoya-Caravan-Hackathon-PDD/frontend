@@ -19,7 +19,7 @@ export const StartGameForm = () => {
         <TextInput
           name="name"
           control={control}
-          placeholder="Enter your GitMon's Name"
+          placeholder="Enter your GitMon's name"
           label="GitMon's Name"
           withAsterisk
         />

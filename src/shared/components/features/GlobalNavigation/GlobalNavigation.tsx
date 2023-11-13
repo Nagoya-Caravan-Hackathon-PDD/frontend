@@ -1,16 +1,12 @@
 'use client';
 
 import { useMantineColorScheme } from '@mantine/core';
-import { useRouter } from 'next/navigation';
 import { ReactNode, useCallback } from 'react';
 import { useRecoilState } from 'recoil';
 import { GithubIcon, MoonIcon, SunIcon } from '../../Icons';
 import { Button } from '../../common/Button';
-import { Text } from '../../common/Text';
-import { useAuth } from '../../hooks/auth/AuthContext';
-import { AppShell, Group } from '../../layouts';
+import { AppShell, Group } from '../../common/Layout';
 import { globalState } from '@/shared/lib/recoil/atom';
-import { Route } from '@/shared/types/Page';
 
 type Props = {
   children?: ReactNode;
@@ -18,13 +14,6 @@ type Props = {
 export const GlobalNavigation = ({ children }: Props) => {
   const [globalConfig, setGlobalConfig] = useRecoilState(globalState);
   const { colorScheme, setColorScheme } = useMantineColorScheme();
-
-  const { currentUser } = useAuth();
-
-  const router = useRouter();
-  const handleClickSignIn = useCallback(() => {
-    router.push(Route.signIn);
-  }, [router]);
 
   const handleSwitchColorScheme = useCallback(
     (cs: 'light' | 'dark') => {
@@ -43,17 +32,6 @@ export const GlobalNavigation = ({ children }: Props) => {
               <GithubIcon />
             </Group>
             <Group ml="xl" gap={0}>
-              {currentUser.token !== undefined && (
-                <>
-                  {currentUser.token === null ? (
-                    <Button onClick={handleClickSignIn}>
-                      SignIn with GitHub
-                    </Button>
-                  ) : (
-                    <Text>{currentUser.userName}</Text>
-                  )}
-                </>
-              )}
               {colorScheme === 'dark' ? (
                 <Button
                   c="gray"

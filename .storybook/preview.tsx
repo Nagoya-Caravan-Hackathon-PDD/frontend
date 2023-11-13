@@ -13,6 +13,7 @@ import { theme } from '../src/shared/lib/mantine/theme';
 const channel = addons.getChannel();
 
 import type { Preview } from '@storybook/react';
+import { RecoilRoot } from 'recoil';
 
 const preview: Preview = {
   parameters: {
@@ -22,6 +23,9 @@ const preview: Preview = {
         color: /(background|color)$/i,
         date: /Date$/i,
       },
+    },
+    nextjs: {
+      appDirectory: true,
     },
   },
 };
@@ -48,4 +52,5 @@ export const decorators = [
   (renderStory: any) => (
     <MantineProvider theme={theme}>{renderStory()}</MantineProvider>
   ),
+  (renderStory: any) => <RecoilRoot>{renderStory()}</RecoilRoot>,
 ];

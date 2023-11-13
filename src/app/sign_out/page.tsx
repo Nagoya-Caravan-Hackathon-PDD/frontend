@@ -12,7 +12,7 @@ const Page = () => {
   useEffect(() => {
     (async () => {
       logout && (await logout());
-      router.push(Route.signIn);
+      router.push(Route.root);
     })();
   }, [logout, router]);
 

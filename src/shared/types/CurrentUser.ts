@@ -1,5 +1,6 @@
 export type CurrentUser = {
-  token?: string | null;
+  token: string | null;
   uid?: string;
   userName?: string;
+  userIcon?: string;
 };

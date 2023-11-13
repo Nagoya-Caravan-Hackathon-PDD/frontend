@@ -1,9 +1,7 @@
-import { StartGameButton } from './StartGameButton';
+import { StartGameForm } from './StartGameForm';
 import { GithubIcon } from '@/shared/components/Icons';
 import { Image } from '@/shared/components/common/Image';
-import { Card, Center } from '@/shared/components/common/Layout';
-import { Stack } from '@/shared/components/common/Layout/Stack';
-import { Title } from '@/shared/components/common/Text';
+import { Card, Center, Stack } from '@/shared/components/common/Layout';
 import { LoginButton } from '@/shared/components/features/LoginButton';
 import { CurrentUser } from '@/shared/types/CurrentUser';
 
@@ -28,10 +26,13 @@ export const UserCard = ({ currentUser }: Props) => {
           </Center>
         </Card.Section>
         <Stack>
-          {currentUser.userName && (
-            <Title order={4}>{currentUser.userName}</Title>
+          {currentUser.token == null ? (
+            <LoginButton />
+          ) : (
+            <>
+              <StartGameForm />
+            </>
           )}
-          {currentUser.token == null ? <LoginButton /> : <StartGameButton />}
         </Stack>
       </Stack>
     </Card>

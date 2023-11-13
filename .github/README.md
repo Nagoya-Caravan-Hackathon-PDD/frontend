@@ -5,13 +5,16 @@
 - [Node.js](https://nodejs.org/en)
 - [Next.js](https://nextjs.org/) (^13.x)
 - [TypeScript](https://www.typescriptlang.org/)
-- [MUI](https://mui.com/)
 - [Prettier](https://prettier.io/)
 - [ESLint](https://eslint.org/)
 - [Storybook](https://storybook.js.org/)
+- [Mantine](https://mantine.dev/)
+- [React Hook Form](https://react-hook-form.com/)
+- [zod](https://github.com/colinhacks/zod)
+- [Recoil](https://recoiljs.org/)
 
 ### Quick start
 
 ```
-npm ci
+npm ci && npm run dev
 ```

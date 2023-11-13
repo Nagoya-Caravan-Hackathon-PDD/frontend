@@ -13,12 +13,12 @@ export const Guard = ({ children }: Props) => {
   const route = useRouter();
 
   useEffect(() => {
-    if (currentUser.token === null) {
+    if (currentUser?.token === null) {
       route.push('/sign_in');
     }
   }, [currentUser, route]);
 
-  if (!currentUser.uid) {
+  if (!currentUser) {
     return <></>;
   }
 

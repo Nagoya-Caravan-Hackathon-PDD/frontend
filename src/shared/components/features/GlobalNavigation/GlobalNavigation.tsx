@@ -6,9 +6,6 @@ import { useRecoilState } from 'recoil';
 import { GithubIcon, MoonIcon, SunIcon } from '../../Icons';
 import { Button } from '../../common/Button';
 import { AppShell, Group } from '../../common/Layout';
-import { Text } from '../../common/Text';
-import { useAuth } from '../../hooks/auth/AuthContext';
-import { LoginButton } from '../LoginButton/LoginButton';
 import { globalState } from '@/shared/lib/recoil/atom';
 
 type Props = {
@@ -17,8 +14,6 @@ type Props = {
 export const GlobalNavigation = ({ children }: Props) => {
   const [globalConfig, setGlobalConfig] = useRecoilState(globalState);
   const { colorScheme, setColorScheme } = useMantineColorScheme();
-
-  const { currentUser } = useAuth();
 
   const handleSwitchColorScheme = useCallback(
     (cs: 'light' | 'dark') => {
@@ -37,15 +32,6 @@ export const GlobalNavigation = ({ children }: Props) => {
               <GithubIcon />
             </Group>
             <Group ml="xl" gap={0}>
-              {currentUser.token !== undefined && (
-                <>
-                  {currentUser.token === null ? (
-                    <LoginButton />
-                  ) : (
-                    <Text>{currentUser.userName}</Text>
-                  )}
-                </>
-              )}
               {colorScheme === 'dark' ? (
                 <Button
                   c="gray"

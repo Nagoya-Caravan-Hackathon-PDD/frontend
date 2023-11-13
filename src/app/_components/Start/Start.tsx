@@ -1,10 +1,19 @@
+'use client';
+
+import { Stack } from '@mantine/core';
+import { UserCard } from './UserCard';
+import { Center } from '@/shared/components/common/Layout';
 import { Title } from '@/shared/components/common/Text';
-import { Center } from '@/shared/components/layouts';
+import { useAuth } from '@/shared/components/hooks/auth/AuthContext';
 
 export const Start = () => {
+  const { currentUser } = useAuth();
   return (
-    <Center>
-      <Title order={1}>GitHub Go</Title>
-    </Center>
+    <Stack>
+      <Center>
+        <Title order={1}>GitHub Go</Title>
+      </Center>
+      <Center>{currentUser && <UserCard currentUser={currentUser} />}</Center>
+    </Stack>
   );
 };

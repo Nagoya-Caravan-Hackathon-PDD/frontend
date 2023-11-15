@@ -15,7 +15,7 @@ export const StartGameForm = () => {
 
   return (
     <Form control={control}>
-      <Stack gap={16}>
+      <Stack gap="md">
         <TextInput
           name="name"
           control={control}

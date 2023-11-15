@@ -9,6 +9,8 @@
 - [ESLint](https://eslint.org/)
 - [Storybook](https://storybook.js.org/)
 - [Mantine](https://mantine.dev/)
+- [Axios](https://axios-http.com/)
+- [aspida](https://github.com/aspida/aspida)
 - [React Hook Form](https://react-hook-form.com/)
 - [zod](https://github.com/colinhacks/zod)
 - [Recoil](https://recoiljs.org/)

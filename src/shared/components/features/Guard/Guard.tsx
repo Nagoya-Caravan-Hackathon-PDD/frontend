@@ -2,7 +2,7 @@
 
 import { useRouter } from 'next/navigation';
 import { ReactNode, useEffect } from 'react';
-import { useAuth } from '../../hooks/auth/AuthContext';
+import { useAuth } from '../../hooks/auth';
 import { Route } from '@/shared/types/Page';
 
 type Props = {

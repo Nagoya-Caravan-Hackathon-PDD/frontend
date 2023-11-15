@@ -7,7 +7,7 @@ import { GithubIcon, MoonIcon, SunIcon } from '../../Icons';
 import { Button } from '../../common/Button';
 import { AppShell, Group } from '../../common/Layout';
 import { Text } from '../../common/Text';
-import { useAuth } from '../../hooks/auth/AuthContext';
+import { useAuth } from '../../hooks/auth';
 import { globalState } from '@/shared/lib/recoil/atom';
 
 type Props = {

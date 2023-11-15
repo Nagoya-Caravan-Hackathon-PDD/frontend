@@ -18,7 +18,7 @@ type AuthContextValue = {
   login?: () => Promise<void>;
   logout?: () => Promise<void>;
 };
-export const AuthContext = createContext<AuthContextValue>({});
+const AuthContext = createContext<AuthContextValue>({});
 
 type Props = {
   children: ReactNode;

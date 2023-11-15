@@ -3,7 +3,7 @@
 import { useRouter } from 'next/navigation';
 import { useCallback } from 'react';
 import { Button } from '@/shared/components/common/Button';
-import { useAuth } from '@/shared/components/hooks/auth/AuthContext';
+import { useAuth } from '@/shared/components/hooks/auth';
 import { Route } from '@/shared/types/Page';
 
 export const LoginButton = () => {

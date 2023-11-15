@@ -2,7 +2,7 @@
 
 import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
-import { useAuth } from '@/shared/components/hooks/auth/AuthContext';
+import { useAuth } from '@/shared/components/hooks/auth';
 import { Route } from '@/shared/types/Page';
 
 const Page = () => {

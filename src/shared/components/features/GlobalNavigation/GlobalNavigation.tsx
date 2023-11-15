@@ -35,7 +35,7 @@ export const GlobalNavigation = ({ children }: Props) => {
             <Group>
               <GithubIcon />
             </Group>
-            <Group ml="xl" gap={0}>
+            <Group ml="xl" gap="sm">
               {currentUser?.userName && <Text>{currentUser.userName}</Text>}
               {colorScheme === 'dark' ? (
                 <Button

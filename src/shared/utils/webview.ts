@@ -2,10 +2,10 @@ import { z } from 'zod';
 import { CurrentUser } from '@/shared/types/CurrentUser';
 
 const UserFromWebview = z.object({
-  token: z.string().nullable(),
-  uid: z.string().optional(),
-  displayName: z.string().optional(),
-  photoURL: z.string().optional(),
+  token: z.string(),
+  uid: z.string(),
+  userName: z.string().nullable(),
+  userIcon: z.string().nullable(),
 });
 
 export const parseCurrentUser = (message: WebviewMessage): CurrentUser => {
@@ -13,7 +13,7 @@ export const parseCurrentUser = (message: WebviewMessage): CurrentUser => {
   return {
     token: user.token,
     uid: user.uid,
-    userName: user.displayName,
-    userIcon: user.photoURL,
+    userName: user.userName ?? undefined,
+    userIcon: user.userIcon ?? undefined,
   };
 };

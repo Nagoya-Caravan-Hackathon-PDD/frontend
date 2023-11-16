@@ -11,6 +11,7 @@
 - [Mantine](https://mantine.dev/)
 - [Axios](https://axios-http.com/)
 - [aspida](https://github.com/aspida/aspida)
+- [SWR](https://swr.vercel.app/)
 - [React Hook Form](https://react-hook-form.com/)
 - [zod](https://github.com/colinhacks/zod)
 - [Recoil](https://recoiljs.org/)

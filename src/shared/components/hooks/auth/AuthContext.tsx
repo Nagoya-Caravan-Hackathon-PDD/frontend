@@ -12,6 +12,7 @@ import { useRecoilState } from 'recoil';
 import { signIn, signOut } from '@/shared/lib/firebase';
 import { firebaseUserState } from '@/shared/lib/recoil/atom';
 import { CurrentUser } from '@/shared/types/CurrentUser';
+import { parseCurrentUser } from '@/shared/utils/webview';
 
 type AuthContextValue = {
   currentUser?: CurrentUser;
@@ -54,6 +55,11 @@ export const AuthProvider = ({ children }: Props) => {
       throw error;
     }
   }, [setFirebaseUser]);
+
+  // NOTE: FlutterからWebview経由で呼ばれる関数
+  window.receiveMessageFromFlutter = (message: WebviewMessage) => {
+    setCurrentUser(parseCurrentUser(message));
+  };
 
   useEffect(() => {
     setCurrentUser(firebaseUser);

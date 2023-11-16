@@ -1,7 +1,7 @@
 // NOTE: Webview用のWindow拡張
 
-type Message = string;
+type WebviewMessage = string;
 
 interface Window {
-  receiveMessageFromFlutter: (message: Message) => void;
+  receiveMessageFromFlutter: (message: WebviewMessage) => void;
 }

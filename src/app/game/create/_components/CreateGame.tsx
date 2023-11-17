@@ -8,9 +8,10 @@ import { theme } from '@/shared/lib/mantine/theme';
 import { Route } from '@/shared/types/Page';
 
 export const CreateGame = () => {
+  const baseUrl = window.location.origin;
   // TODO: サーバーからIDを受け取る
   const id = '1234567890';
-  const url = process.env.NEXT_PUBLIC_BASE_URL + '/' + Route.game + '/' + id;
+  const url = baseUrl + Route.game + '/' + id;
   const [isReady, setIsReady] = useState(false);
   const handleClickReady = () => {
     if (isReady) {

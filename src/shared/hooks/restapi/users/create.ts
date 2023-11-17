@@ -11,7 +11,7 @@ export const useCreateUser = () => {
         await api.v1.users.$post({
           body: { github_id: currentUser.userName ?? '' },
           headers: {
-            Authorization: currentUser.token ?? '',
+            Authorization: `Bearer ${currentUser.token}` ?? '',
           },
         });
       } catch (error) {

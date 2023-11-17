@@ -61,7 +61,7 @@ export const GlobalNavigation = ({ children }: Props) => {
       router.push(path);
       close();
     },
-    [router],
+    [close, router],
   );
 
   return (

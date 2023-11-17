@@ -12,6 +12,9 @@ export const StartGameForm = () => {
   const router = useRouter();
   const { control, handleSubmit } = useForm<Schema>({
     resolver: zodResolver(schema),
+    defaultValues: {
+      name: '',
+    },
   });
 
   const onSubmit = useCallback(

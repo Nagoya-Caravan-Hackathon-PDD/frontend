@@ -1,17 +1,25 @@
 import { zodResolver } from '@hookform/resolvers/zod';
+import { useRouter } from 'next/navigation';
 import { useCallback } from 'react';
 import { useForm } from 'react-hook-form';
 import { Schema, schema } from './schema';
 import { Button } from '@/shared/components/common/Button';
 import { Form, TextInput } from '@/shared/components/common/Form';
 import { Center, Stack } from '@/shared/components/common/Layout';
+import { Route } from '@/shared/types/Page';
 
 export const StartGameForm = () => {
+  const router = useRouter();
   const { control, handleSubmit } = useForm<Schema>({
     resolver: zodResolver(schema),
   });
 
-  const onSubmit = useCallback((values: Schema) => {}, []);
+  const onSubmit = useCallback(
+    (values: Schema) => {
+      router.push(Route.profile);
+    },
+    [router],
+  );
 
   return (
     <Form control={control}>

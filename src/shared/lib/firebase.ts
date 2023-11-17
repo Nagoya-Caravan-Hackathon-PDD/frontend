@@ -1,8 +1,7 @@
-'use client';
-
 import { initializeApp } from 'firebase/app';
 import {
   GithubAuthProvider,
+  User,
   signOut as firebaseSignIn,
   getAuth,
   signInWithPopup,
@@ -20,14 +19,11 @@ const app = initializeApp({
 
 const auth = getAuth(app);
 
-export const signIn = async () => {
+export const signIn = async (): Promise<User & { accessToken?: string }> => {
   const provider = new GithubAuthProvider();
   try {
     const result = await signInWithPopup(auth, provider);
-    const credential = GithubAuthProvider.credentialFromResult(result);
-    const token = credential!.accessToken;
-    console.debug(result.user);
-    return { token: token, ...result.user };
+    return result.user;
   } catch (error) {
     throw error;
   }

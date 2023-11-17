@@ -3,7 +3,8 @@
 import aspida from '@aspida/axios';
 import axios from 'axios';
 import { ReactNode, createContext, useContext, useMemo } from 'react';
-import { useAuth } from '@/shared/components/hooks/auth';
+import { useRecoilState } from 'recoil';
+import { firebaseUserState } from '../recoil/atom';
 import api from 'api/$api';
 
 const axiosInstance = axios.create({
@@ -21,11 +22,14 @@ type Props = {
   children: ReactNode;
 };
 export const AxiosProvider = ({ children }: Props) => {
-  const { currentUser } = useAuth();
+  const [currentUser, _] = useRecoilState(firebaseUserState);
 
   const apiClient = useMemo(() => {
+    if (currentUser === undefined) {
+      return undefined;
+    }
     const headers =
-      currentUser?.token == null
+      currentUser.token == null
         ? undefined
         : { Authorization: `Bearer ${currentUser.token}` };
 

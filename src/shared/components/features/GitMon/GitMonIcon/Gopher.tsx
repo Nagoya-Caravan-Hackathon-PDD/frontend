@@ -1,13 +1,9 @@
+import { ImageProps } from '@mantine/core';
 import { Image } from '@/shared/components/common/Image';
 
-export const Gopher = () => {
+type Props = Omit<ImageProps, 'src' | 'alt'>;
+export const Gopher = (props: Props) => {
   return (
-    <Image
-      src={'/gitmon/2.svg'}
-      alt={'Gopher'}
-      width={200}
-      height={200}
-      fit="contain"
-    />
+    <Image src={'/gitmon/2.svg'} alt={'Gopher'} fit="contain" {...props} />
   );
 };

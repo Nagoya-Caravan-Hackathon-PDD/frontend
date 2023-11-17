@@ -1,13 +1,14 @@
+import { ImageProps } from '@mantine/core';
 import { Image } from '@/shared/components/common/Image';
 
-export const Ferris = () => {
+type Props = Omit<ImageProps, 'src' | 'alt'>;
+export const Ferris = (props: Props) => {
   return (
     <Image
       src={'/gitmon/1.svg'}
       alt={'Ferris the crab'}
-      width={200}
-      height={200}
       fit="contain"
+      {...props}
     />
   );
 };

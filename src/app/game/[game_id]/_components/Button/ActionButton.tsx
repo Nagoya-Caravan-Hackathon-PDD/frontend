@@ -6,11 +6,11 @@ import { Text } from '@/shared/components/common/Text';
 type Props = {
   type: 'attack' | 'defense' | 'skill';
   text: string;
-  onClick: () => void;
+  onClick?: () => void;
 };
 export const ActionButton = ({ text, type, onClick }: Props) => {
   return (
-    <Button color="gray" variant="outline" onClick={onClick}>
+    <Button fullWidth color="gray" variant="outline" onClick={onClick}>
       <Group>
         {type === 'attack' && <SwordsIcon />}
         {type === 'defense' && <ShieldIcon />}

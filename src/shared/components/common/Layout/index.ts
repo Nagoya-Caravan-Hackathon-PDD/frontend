@@ -5,3 +5,4 @@ export { Center } from './Center';
 export { Grid } from './Grid';
 export { Group } from './Group';
 export { Stack } from './Stack';
+export { Flex } from './Flex';

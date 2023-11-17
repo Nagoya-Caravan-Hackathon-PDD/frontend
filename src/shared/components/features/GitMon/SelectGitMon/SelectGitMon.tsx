@@ -1,14 +1,15 @@
 import { MouseEventHandler, useCallback } from 'react';
+import { GitMonIcon } from '../GitMonIcon';
 import { Button } from '@/shared/components/common/Button';
-import { Image } from '@/shared/components/common/Image';
 import { Box, Center, Grid } from '@/shared/components/common/Layout';
+import { useMediaQuery } from '@/shared/components/hooks/useMediaQuery';
 
 type Props = {
   value: number | null;
   onChange: (gitMonId: number) => void;
-  gitMons: { id: number; photo: string }[];
 };
-export const SelectGitMon = ({ value, gitMons, onChange }: Props) => {
+export const SelectGitMon = ({ value, onChange }: Props) => {
+  const isMobile = useMediaQuery('(max-width: 768px)');
   const handleClick: MouseEventHandler<HTMLButtonElement> = useCallback(
     (event) => {
       onChange(~~event.currentTarget.value);
@@ -16,21 +17,22 @@ export const SelectGitMon = ({ value, gitMons, onChange }: Props) => {
     [onChange],
   );
 
+  const index = [1, 2, 3, 4, 5];
   return (
-    <Grid>
-      {gitMons.map(({ id, photo }) => {
+    <Grid justify="center">
+      {index.map((num) => {
         return (
-          <Box key={id} p={10}>
+          <Box key={num} p={10}>
             <Button
-              value={id}
-              variant={value === id ? 'outline' : 'transparent'}
+              value={num}
+              variant={value === num ? 'outline' : 'transparent'}
               onClick={handleClick}
-              w={200}
-              h={200}
+              w={isMobile ? 100 : 200}
+              h={isMobile ? 100 : 200}
               radius="md"
             >
               <Center>
-                <Image src={photo} alt={`GitMon ${id}`} radius="md" />
+                <GitMonIcon index={num} />
               </Center>
             </Button>
           </Box>

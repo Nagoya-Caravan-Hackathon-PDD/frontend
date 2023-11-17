@@ -7,14 +7,12 @@ import { SelectGitMon } from '@/shared/components/features/GitMon/SelectGitMon/S
 type Props = {
   isOpen: boolean;
   gitMonId: number | null;
-  gitMons: { id: number; photo: string }[];
   onClose: () => void;
   onChange: (gitMonId: number) => void;
 };
 export const SelectGitMonModal = ({
   isOpen,
   gitMonId,
-  gitMons,
   onClose,
   onChange,
 }: Props) => {
@@ -22,16 +20,10 @@ export const SelectGitMonModal = ({
     <Modal opened={isOpen} onClose={onClose} size="xl">
       <Stack>
         <Center>
-          <Title order={4}>
-            {`ここに${gitMons.length}匹のギトモンがおるじゃろ？`}
-          </Title>
+          <Title order={4}>{`ここに${5}匹のギトモンがおるじゃろ？`}</Title>
         </Center>
         <Center>
-          <SelectGitMon
-            value={gitMonId}
-            onChange={onChange}
-            gitMons={gitMons}
-          />
+          <SelectGitMon value={gitMonId} onChange={onChange} />
         </Center>
         <Center>
           <Button onClick={onClose}>決定</Button>

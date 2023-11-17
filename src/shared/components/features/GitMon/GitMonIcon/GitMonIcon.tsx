@@ -18,7 +18,8 @@ const icons = [
 
 export const GitMonIcon = ({ index }: Props) => {
   // indexは1~5なので0~4に変換する
-  const gitmonIndex = index < 1 || index > 5 ? index - 1 : 0;
+
+  const gitmonIndex = Math.max(0, Math.min(index - 1, 4));
 
   return icons[gitmonIndex];
 };

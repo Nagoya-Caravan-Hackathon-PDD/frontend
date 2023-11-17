@@ -27,13 +27,13 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         <RecoilRoot>
-          <AuthProvider>
-            <AxiosProvider>
+          <AxiosProvider>
+            <AuthProvider>
               <ThemeProvider>
                 <GlobalNavigation>{children}</GlobalNavigation>
               </ThemeProvider>
-            </AxiosProvider>
-          </AuthProvider>
+            </AuthProvider>
+          </AxiosProvider>
         </RecoilRoot>
       </body>
     </html>

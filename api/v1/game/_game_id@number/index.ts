@@ -2,7 +2,7 @@
 import type * as Types from '../../../@types';
 
 export type Methods = {
-  /** Game Ready */
+  /** Join Game */
   post: {
     reqHeaders?:
       | {
@@ -12,7 +12,9 @@ export type Methods = {
       | undefined;
 
     status: 200;
+    /** success response */
+    resBody: Types.Output_JoinGameResponse;
     /** create game request */
-    reqBody: Types.Input_ReadyGameRequest;
+    reqBody: Types.Input_JoinGameRequest;
   };
 };

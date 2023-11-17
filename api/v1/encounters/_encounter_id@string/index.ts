@@ -1,9 +1,9 @@
 /* eslint-disable */
-import type * as Types from '../@types';
+import type * as Types from '../../../@types';
 
 export type Methods = {
-  /** Create Game */
-  post: {
+  /** Get All Encounters */
+  get: {
     reqHeaders?:
       | {
           /** Authorization */
@@ -13,8 +13,6 @@ export type Methods = {
 
     status: 200;
     /** success response */
-    resBody: Types.Output_CreateGameResponse;
-    /** create game request */
-    reqBody: Types.Input_CreateGameRequest;
+    resBody: Types.Output_ListEncounterResponse;
   };
 };

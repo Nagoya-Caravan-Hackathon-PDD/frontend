@@ -2,8 +2,8 @@
 import type * as Types from '../../@types';
 
 export type Methods = {
-  /** Get any User */
-  get: {
+  /** Create User */
+  post: {
     reqHeaders?:
       | {
           /** Authorization */
@@ -13,13 +13,8 @@ export type Methods = {
 
     status: 200;
     /** success response */
-    resBody: Types.Output_ReadUserResponse;
-  };
-
-  /** Delete User */
-  delete: {
-    status: 200;
-    /** success response */
-    resBody: Types.Output_DeleteUserResponse;
+    resBody: Types.Output_CreateUserResponse;
+    /** create user request */
+    reqBody: Types.Input_CreateUser;
   };
 };

@@ -1,0 +1,1 @@
+export { GitMonIcon } from './GitMonIcon';

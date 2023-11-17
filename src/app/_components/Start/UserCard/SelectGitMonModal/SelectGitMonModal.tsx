@@ -20,7 +20,7 @@ export const SelectGitMonModal = ({
 }: Props) => {
   return (
     <Modal opened={isOpen} onClose={onClose} size="xl">
-      <Stack gap="md">
+      <Stack>
         <Center>
           <Title order={4}>
             {`ここに${gitMons.length}匹のギトモンがおるじゃろ？`}

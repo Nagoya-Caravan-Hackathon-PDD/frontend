@@ -56,13 +56,12 @@ export const AuthProvider = ({ children }: Props) => {
     }
   }, [setFirebaseUser]);
 
-  // NOTE: FlutterからWebview経由で呼ばれる関数
-  window.receiveMessageFromFlutter = (message: WebviewMessage) => {
-    setCurrentUser(parseCurrentUser(message));
-  };
-
   useEffect(() => {
     setCurrentUser(firebaseUser);
+    // NOTE: FlutterからWebview経由で呼ばれる関数
+    window.receiveMessageFromFlutter = (message: WebviewMessage) => {
+      setCurrentUser(parseCurrentUser(message));
+    };
   }, [firebaseUser]);
 
   return (

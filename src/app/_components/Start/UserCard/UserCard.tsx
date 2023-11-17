@@ -17,15 +17,15 @@ export const UserCard = ({ currentUser }: Props) => {
   const { isOpen, open, close } = useDisclosure();
 
   return (
-    <Card p={'xl'}>
+    <Card p="xl">
       <Stack gap="lg">
         <Card.Section>
-          <Center p={'md'}>
+          <Center p="md">
             {currentUser.token === null ? (
-              <GithubIcon width="100%" height="100%" />
+              <GithubIcon width={300} height={300} />
             ) : (
               <Button
-                variant="transparent"
+                variant="outline"
                 w={300}
                 h={300}
                 radius="md"
@@ -40,9 +40,11 @@ export const UserCard = ({ currentUser }: Props) => {
             )}
           </Center>
         </Card.Section>
-        <Stack>
-          {currentUser.token === null ? <LoginButton /> : <StartGameForm />}
-        </Stack>
+        <Card.Section>
+          <Stack>
+            {currentUser.token === null ? <LoginButton /> : <StartGameForm />}
+          </Stack>
+        </Card.Section>
       </Stack>
       <SelectGitMonModal
         isOpen={isOpen}

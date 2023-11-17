@@ -9,6 +9,9 @@ import { Center, Stack } from '@/shared/components/common/Layout';
 export const StartGameForm = () => {
   const { control, handleSubmit } = useForm<Schema>({
     resolver: zodResolver(schema),
+    defaultValues: {
+      name: '',
+    },
   });
 
   const onSubmit = useCallback((values: Schema) => {}, []);

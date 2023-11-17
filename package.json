@@ -11,6 +11,7 @@
     "build-storybook": "storybook build",
     "prepare": "husky install",
     "aspidagen": "rimraf ./api && npx openapi2aspida -i ./openapi.yaml"
+
   },
   "dependencies": {
     "@aspida/axios": "^1.14.0",
@@ -19,6 +20,7 @@
     "@mantine/dates": "^7.2.2",
     "@mantine/hooks": "^7.2.1",
     "@tabler/icons-react": "^2.40.0",
+    "aspida": "^1.14.0",
     "axios": "^1.6.2",
     "dayjs": "^1.11.10",
     "firebase": "^10.6.0",

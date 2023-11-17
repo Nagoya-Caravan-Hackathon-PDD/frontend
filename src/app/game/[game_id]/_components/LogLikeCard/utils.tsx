@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 import { MessageVariant } from './types';
-import { Loader } from '@/shared/components/Feedback';
 import { CircleCheckIcon } from '@/shared/components/Icons';
+import { Loader } from '@/shared/components/common/Feedback';
 import { Group } from '@/shared/components/common/Layout';
 
 export const createLogText = (

@@ -19,5 +19,8 @@
 ### Quick start
 
 ```
-npm ci && npm run dev
+npm ci
+cp /your/openapi/path.yaml ./openapi.yaml
+npm run aspidagen
+npm run dev
 ```

@@ -7,7 +7,7 @@ export const useCreateUser = () => {
     async (githubId: string) => {
       if (!api) return;
       try {
-        await api.users.$post({ body: { github_id: githubId } });
+        await api.v1.users.$post({ body: { github_id: githubId } });
       } catch (error) {
         throw error;
       }

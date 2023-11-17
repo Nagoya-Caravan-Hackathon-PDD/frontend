@@ -1,6 +1,8 @@
+export { CircleCheckIcon } from './CircleCheckIcon';
 export { GithubIcon } from './GitHubIcon';
 export { MoonIcon } from './MoonIcon';
 export { SettingsIcon } from './SettingsIcon';
+export { ShieldIcon } from './ShieldIcon';
 export { SunIcon } from './SunIcon';
 export { SwordsIcon } from './SwordsIcon';
 export { HistoryIcon } from './HistoryIcon';

@@ -1,8 +1,8 @@
 /* eslint-disable */
-import type * as Types from '../../../@types';
+import type * as Types from '../../../../@types';
 
 export type Methods = {
-  /** Game Action */
+  /** Game Ready */
   post: {
     reqHeaders?:
       | {
@@ -13,6 +13,6 @@ export type Methods = {
 
     status: 200;
     /** create game request */
-    reqBody: Types.Input_ActionGameRequest;
+    reqBody: Types.Input_ReadyGameRequest;
   };
 };

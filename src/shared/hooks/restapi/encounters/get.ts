@@ -8,9 +8,9 @@ export const useGetEncounters = (
 ) => {
   const { api } = useApiClient();
   return useSWR(
-    api?.encounters.$path(),
+    api?.v1.encounters.$path(),
     () =>
-      api?.encounters.$get({
+      api?.v1.encounters.$get({
         query: { pageID: pageId, pageSize: pageSize, userID: githubId },
       }),
   );

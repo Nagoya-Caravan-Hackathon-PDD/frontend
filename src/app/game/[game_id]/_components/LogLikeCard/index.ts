@@ -1,0 +1,1 @@
+export { LogLikeCard } from './LogLikeCard';

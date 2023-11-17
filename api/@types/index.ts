@@ -28,10 +28,6 @@ export type Input_ReadyGameRequest = {
   user_id?: string | undefined;
 };
 
-export type Output_ActionGameResponse = {
-  skill?: Types_Skill | undefined;
-};
-
 export type Output_CreateEncounterResponse = {
   encounter_id?: string | undefined;
 };
@@ -67,15 +63,3 @@ export type Output_ReadUserResponse = {
   /** ユーザの情報 */
   user_id?: string | undefined;
 };
-
-export type Types_Skill = {
-  description?: string | undefined;
-  required_bp?: number | undefined;
-  /** BP制にする。毎ターン+2もらえる */
-  skill_id?: number | undefined;
-  skill_name?: string | undefined;
-  skill_type?: Types_SkillType | undefined;
-  skill_value?: number | undefined;
-};
-
-export type Types_SkillType = 'attack' | 'defence' | 'buf' | 'debuf' | 'heal';

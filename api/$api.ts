@@ -158,34 +158,34 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
             /**
              * Game Action
              * @param option.body - create game request
-             * @returns success response
              */
             post: (option: {
               body: Methods_jgopfg['post']['reqBody'];
               headers?: Methods_jgopfg['post']['reqHeaders'] | undefined;
               config?: T | undefined;
             }) =>
-              fetch<
-                Methods_jgopfg['post']['resBody'],
-                BasicHeaders,
-                Methods_jgopfg['post']['status']
-              >(prefix, `${prefix1}${PATH2}`, POST, option).json(),
+              fetch<void, BasicHeaders, Methods_jgopfg['post']['status']>(
+                prefix,
+                `${prefix1}${PATH2}`,
+                POST,
+                option,
+              ).send(),
             /**
              * Game Action
              * @param option.body - create game request
-             * @returns success response
              */
             $post: (option: {
               body: Methods_jgopfg['post']['reqBody'];
               headers?: Methods_jgopfg['post']['reqHeaders'] | undefined;
               config?: T | undefined;
             }) =>
-              fetch<
-                Methods_jgopfg['post']['resBody'],
-                BasicHeaders,
-                Methods_jgopfg['post']['status']
-              >(prefix, `${prefix1}${PATH2}`, POST, option)
-                .json()
+              fetch<void, BasicHeaders, Methods_jgopfg['post']['status']>(
+                prefix,
+                `${prefix1}${PATH2}`,
+                POST,
+                option,
+              )
+                .send()
                 .then((r) => r.body),
             $path: () => `${prefix}${prefix1}${PATH2}`,
           },
@@ -193,34 +193,34 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
             /**
              * Game Ready
              * @param option.body - create game request
-             * @returns success response
              */
             post: (option: {
               body: Methods_ydw6et['post']['reqBody'];
               headers?: Methods_ydw6et['post']['reqHeaders'] | undefined;
               config?: T | undefined;
             }) =>
-              fetch<
-                Methods_ydw6et['post']['resBody'],
-                BasicHeaders,
-                Methods_ydw6et['post']['status']
-              >(prefix, `${prefix1}${PATH3}`, POST, option).json(),
+              fetch<void, BasicHeaders, Methods_ydw6et['post']['status']>(
+                prefix,
+                `${prefix1}${PATH3}`,
+                POST,
+                option,
+              ).send(),
             /**
              * Game Ready
              * @param option.body - create game request
-             * @returns success response
              */
             $post: (option: {
               body: Methods_ydw6et['post']['reqBody'];
               headers?: Methods_ydw6et['post']['reqHeaders'] | undefined;
               config?: T | undefined;
             }) =>
-              fetch<
-                Methods_ydw6et['post']['resBody'],
-                BasicHeaders,
-                Methods_ydw6et['post']['status']
-              >(prefix, `${prefix1}${PATH3}`, POST, option)
-                .json()
+              fetch<void, BasicHeaders, Methods_ydw6et['post']['status']>(
+                prefix,
+                `${prefix1}${PATH3}`,
+                POST,
+                option,
+              )
+                .send()
                 .then((r) => r.body),
             $path: () => `${prefix}${prefix1}${PATH3}`,
           },

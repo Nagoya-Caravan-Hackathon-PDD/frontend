@@ -11,7 +11,7 @@ import { RecoilRoot } from '@/shared/lib/recoil/RecoilRoot';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'GitHub Go',
+  title: 'GitHub Monster',
   description: "Let's battle with your GitHub account!",
 };
 

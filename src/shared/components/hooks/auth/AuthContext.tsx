@@ -16,7 +16,7 @@ import { parseCurrentUser } from '@/shared/utils/webview';
 
 type AuthContextValue = {
   currentUser?: CurrentUser;
-  login?: () => Promise<void>;
+  login?: () => Promise<GitHubId>;
   logout?: () => Promise<void>;
 };
 const AuthContext = createContext<AuthContextValue>({});
@@ -30,7 +30,7 @@ export const AuthProvider = ({ children }: Props) => {
   );
   const [firebaseUser, setFirebaseUser] = useRecoilState(firebaseUserState);
 
-  const login = useCallback(async () => {
+  const login = useCallback(async (): Promise<GitHubId> => {
     try {
       const user = await signIn();
       const currentUser: CurrentUser = {
@@ -41,6 +41,11 @@ export const AuthProvider = ({ children }: Props) => {
       };
       setCurrentUser(currentUser);
       setFirebaseUser(currentUser);
+
+      // NOTE: displayNameがgithubID
+      // TODO: displayNameがない時のエラーハンドリング
+
+      return user.displayName ?? '';
     } catch (error) {
       throw error;
     }

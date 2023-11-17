@@ -2,7 +2,7 @@
 
 import aspida from '@aspida/axios';
 import axios from 'axios';
-import { ReactNode, createContext, useContext } from 'react';
+import { ReactNode, createContext, useContext, useMemo } from 'react';
 import { useAuth } from '@/shared/components/hooks/auth';
 import api from 'api/$api';
 
@@ -23,18 +23,22 @@ type Props = {
 export const AxiosProvider = ({ children }: Props) => {
   const { currentUser } = useAuth();
 
-  const headers =
-    currentUser?.token == null
-      ? undefined
-      : { Authorization: `Bearer ${currentUser.token}` };
+  const apiClient = useMemo(() => {
+    const headers =
+      currentUser?.token == null
+        ? undefined
+        : { Authorization: `Bearer ${currentUser.token}` };
 
-  const axiosInstance = axios.create({
-    baseURL: process.env.NEXT_PUBLIC_API_ORIGIN,
-    headers: headers,
-  });
+    const axiosInstance = axios.create({
+      baseURL: process.env.NEXT_PUBLIC_API_ORIGIN,
+      headers: headers,
+    });
+
+    return api(aspida(axiosInstance));
+  }, [currentUser]);
 
   return (
-    <AxiosContext.Provider value={{ api: api(aspida(axiosInstance)) }}>
+    <AxiosContext.Provider value={{ api: apiClient }}>
       {children}
     </AxiosContext.Provider>
   );

@@ -1,0 +1,1 @@
+export { useGetEncounter } from './get';

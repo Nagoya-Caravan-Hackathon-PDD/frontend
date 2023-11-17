@@ -2,6 +2,7 @@ import '@mantine/core/styles.css';
 import { ColorSchemeScript } from '@mantine/core';
 import { Inter } from 'next/font/google';
 import type { Metadata } from 'next';
+import { GlobalNavigation } from '@/shared/components/features/GlobalNavigation';
 import { AuthProvider } from '@/shared/components/hooks/auth';
 import { AxiosProvider } from '@/shared/lib/axios';
 import { ThemeProvider } from '@/shared/lib/mantine/ThemeProvider';
@@ -28,7 +29,9 @@ export default function RootLayout({
         <RecoilRoot>
           <AuthProvider>
             <AxiosProvider>
-              <ThemeProvider>{children}</ThemeProvider>
+              <ThemeProvider>
+                <GlobalNavigation>{children}</GlobalNavigation>
+              </ThemeProvider>
             </AxiosProvider>
           </AuthProvider>
         </RecoilRoot>

@@ -44,7 +44,7 @@ export const GlobalNavigation = ({ children }: Props) => {
 
   const [globalConfig, setGlobalConfig] = useRecoilState(globalState);
   const { colorScheme, setColorScheme } = useMantineColorScheme();
-  const { isOpen, toggle } = useDisclosure();
+  const { isOpen, toggle, close } = useDisclosure();
   const router = useRouter();
   const isLoggedIn = useMemo(() => !!currentUser?.token, [currentUser]);
 
@@ -59,6 +59,7 @@ export const GlobalNavigation = ({ children }: Props) => {
   const handleClickNavigationItem = useCallback(
     (path: string) => {
       router.push(path);
+      close();
     },
     [router],
   );

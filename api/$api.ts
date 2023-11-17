@@ -2,9 +2,9 @@ import { dataToURLString } from 'aspida';
 import type { Methods as Methods_194xoh8 } from './encounters';
 import type { Methods as Methods_ktwtk2 } from './encounters/_encounter_id@string';
 import type { Methods as Methods_gyft88 } from './game';
-import type { Methods as Methods_166ictg } from './game/_game_id';
-import type { Methods as Methods_r9cp5v } from './game/_game_id/action';
-import type { Methods as Methods_eygh08 } from './game/_game_id/ready';
+import type { Methods as Methods_y57t8d } from './game/_game_id@number';
+import type { Methods as Methods_jgopfg } from './game/_game_id@number/action';
+import type { Methods as Methods_ydw6et } from './game/_game_id@number/ready';
 import type { Methods as Methods_1xhiioa } from './users';
 import type { Methods as Methods_1m2ih5q } from './users/_user_id@string';
 import type { AspidaClient, BasicHeaders } from 'aspida';
@@ -150,7 +150,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
         }`,
     },
     game: {
-      _game_id: (val1: number | string) => {
+      _game_id: (val1: number) => {
         const prefix1 = `${PATH1}/${val1}`;
 
         return {
@@ -161,14 +161,14 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
              * @returns success response
              */
             post: (option: {
-              body: Methods_r9cp5v['post']['reqBody'];
-              headers?: Methods_r9cp5v['post']['reqHeaders'] | undefined;
+              body: Methods_jgopfg['post']['reqBody'];
+              headers?: Methods_jgopfg['post']['reqHeaders'] | undefined;
               config?: T | undefined;
             }) =>
               fetch<
-                Methods_r9cp5v['post']['resBody'],
+                Methods_jgopfg['post']['resBody'],
                 BasicHeaders,
-                Methods_r9cp5v['post']['status']
+                Methods_jgopfg['post']['status']
               >(prefix, `${prefix1}${PATH2}`, POST, option).json(),
             /**
              * Game Action
@@ -176,14 +176,14 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
              * @returns success response
              */
             $post: (option: {
-              body: Methods_r9cp5v['post']['reqBody'];
-              headers?: Methods_r9cp5v['post']['reqHeaders'] | undefined;
+              body: Methods_jgopfg['post']['reqBody'];
+              headers?: Methods_jgopfg['post']['reqHeaders'] | undefined;
               config?: T | undefined;
             }) =>
               fetch<
-                Methods_r9cp5v['post']['resBody'],
+                Methods_jgopfg['post']['resBody'],
                 BasicHeaders,
-                Methods_r9cp5v['post']['status']
+                Methods_jgopfg['post']['status']
               >(prefix, `${prefix1}${PATH2}`, POST, option)
                 .json()
                 .then((r) => r.body),
@@ -196,14 +196,14 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
              * @returns success response
              */
             post: (option: {
-              body: Methods_eygh08['post']['reqBody'];
-              headers?: Methods_eygh08['post']['reqHeaders'] | undefined;
+              body: Methods_ydw6et['post']['reqBody'];
+              headers?: Methods_ydw6et['post']['reqHeaders'] | undefined;
               config?: T | undefined;
             }) =>
               fetch<
-                Methods_eygh08['post']['resBody'],
+                Methods_ydw6et['post']['resBody'],
                 BasicHeaders,
-                Methods_eygh08['post']['status']
+                Methods_ydw6et['post']['status']
               >(prefix, `${prefix1}${PATH3}`, POST, option).json(),
             /**
              * Game Ready
@@ -211,14 +211,14 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
              * @returns success response
              */
             $post: (option: {
-              body: Methods_eygh08['post']['reqBody'];
-              headers?: Methods_eygh08['post']['reqHeaders'] | undefined;
+              body: Methods_ydw6et['post']['reqBody'];
+              headers?: Methods_ydw6et['post']['reqHeaders'] | undefined;
               config?: T | undefined;
             }) =>
               fetch<
-                Methods_eygh08['post']['resBody'],
+                Methods_ydw6et['post']['resBody'],
                 BasicHeaders,
-                Methods_eygh08['post']['status']
+                Methods_ydw6et['post']['status']
               >(prefix, `${prefix1}${PATH3}`, POST, option)
                 .json()
                 .then((r) => r.body),
@@ -230,14 +230,14 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
            * @returns success response
            */
           post: (option: {
-            body: Methods_166ictg['post']['reqBody'];
-            headers?: Methods_166ictg['post']['reqHeaders'] | undefined;
+            body: Methods_y57t8d['post']['reqBody'];
+            headers?: Methods_y57t8d['post']['reqHeaders'] | undefined;
             config?: T | undefined;
           }) =>
             fetch<
-              Methods_166ictg['post']['resBody'],
+              Methods_y57t8d['post']['resBody'],
               BasicHeaders,
-              Methods_166ictg['post']['status']
+              Methods_y57t8d['post']['status']
             >(prefix, prefix1, POST, option).json(),
           /**
            * Join Game
@@ -245,14 +245,14 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
            * @returns success response
            */
           $post: (option: {
-            body: Methods_166ictg['post']['reqBody'];
-            headers?: Methods_166ictg['post']['reqHeaders'] | undefined;
+            body: Methods_y57t8d['post']['reqBody'];
+            headers?: Methods_y57t8d['post']['reqHeaders'] | undefined;
             config?: T | undefined;
           }) =>
             fetch<
-              Methods_166ictg['post']['resBody'],
+              Methods_y57t8d['post']['resBody'],
               BasicHeaders,
-              Methods_166ictg['post']['status']
+              Methods_y57t8d['post']['status']
             >(prefix, prefix1, POST, option)
               .json()
               .then((r) => r.body),

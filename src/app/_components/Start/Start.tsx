@@ -11,7 +11,7 @@ export const Start = () => {
   return (
     <Stack>
       <Center>
-        <Title order={1}>GitHub Go</Title>
+        <Title order={1}>GitHub Monster</Title>
       </Center>
       <Center>{currentUser && <UserCard currentUser={currentUser} />}</Center>
     </Stack>

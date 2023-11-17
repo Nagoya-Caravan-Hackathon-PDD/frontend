@@ -1,4 +1,4 @@
-import { IconDoorEnter, IconUsers } from '@tabler/icons-react';
+import { DoorEnterIcon, UsersIcon } from '@/shared/components/Icons';
 import { Button } from '@/shared/components/common/Button';
 import { Stack } from '@/shared/components/common/Layout';
 import { Route } from '@/shared/types/Page';
@@ -9,14 +9,14 @@ export const Game = () => {
       <Button
         component="a"
         href={Route.createGameRoom}
-        leftSection={<IconUsers />}
+        leftSection={<UsersIcon />}
       >
         {'Create a game'}
       </Button>
       <Button
         component="a"
         href={Route.joinGameRoom}
-        leftSection={<IconDoorEnter />}
+        leftSection={<DoorEnterIcon />}
       >
         {'Join the game'}
       </Button>

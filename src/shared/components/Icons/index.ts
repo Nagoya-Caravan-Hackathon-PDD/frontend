@@ -2,3 +2,8 @@ export { GithubIcon } from './GitHubIcon';
 export { MoonIcon } from './MoonIcon';
 export { SettingsIcon } from './SettingsIcon';
 export { SunIcon } from './SunIcon';
+export { SwordsIcon } from './SwordsIcon';
+export { HistoryIcon } from './HistoryIcon';
+export { UserIcon } from './UserIcon';
+export { UsersIcon } from './UsersIcon';
+export { DoorEnterIcon } from './DoorEnterIcon';

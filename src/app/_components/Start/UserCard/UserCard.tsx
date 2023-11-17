@@ -3,7 +3,8 @@ import { SelectGitMonModal } from './SelectGitMonModal/SelectGitMonModal';
 import { StartGameForm } from './StartGameForm';
 import { GithubIcon } from '@/shared/components/Icons';
 import { Button } from '@/shared/components/common/Button';
-import { Card, Center, Stack } from '@/shared/components/common/Layout';
+import { Card, Center, Flex, Stack } from '@/shared/components/common/Layout';
+import { Text } from '@/shared/components/common/Text';
 import { GitMonIcon } from '@/shared/components/features/GitMon/GitMonIcon';
 import { LoginButton } from '@/shared/components/features/LoginButton';
 import { useDisclosure } from '@/shared/components/hooks/useDisclosure';
@@ -34,7 +35,10 @@ export const UserCard = ({ currentUser }: Props) => {
                 {gitMonId ? (
                   <GitMonIcon index={gitMonId} />
                 ) : (
-                  <GithubIcon width="100%" height="100%" />
+                  <Flex direction="column">
+                    <GithubIcon width="100%" height="100%" />
+                    <Text size="lg">Tap!</Text>
+                  </Flex>
                 )}
               </Button>
             )}

@@ -21,6 +21,7 @@ export const StartGameForm = () => {
           control={control}
           placeholder="Enter your GitMon's name"
           label="GitMon's Name"
+          autoComplete="off"
           withAsterisk
         />
         <Center>

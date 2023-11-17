@@ -9,7 +9,7 @@
     "lint": "next lint",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "prepare": "husky install",
+    "prepare": "npx husky install",
     "aspidagen": "rimraf ./api && npx openapi2aspida -i ./openapi.yaml"
   },
   "dependencies": {
@@ -54,7 +54,8 @@
     "prettier": "^3.0.3",
     "storybook": "^7.5.3",
     "storybook-dark-mode": "^3.0.1",
-    "typescript": "^5"
+    "typescript": "^5",
+    "husky": "^8.0.0"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [

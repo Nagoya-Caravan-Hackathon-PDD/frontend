@@ -1,20 +1,18 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
 import { useCallback } from 'react';
 import { Button } from '@/shared/components/common/Button';
 import { useAuth } from '@/shared/components/hooks/auth';
-import { Route } from '@/shared/types/Page';
+import { useCreateUser } from '@/shared/hooks/restapi/users';
 
 export const LoginButton = () => {
   const { login } = useAuth();
-  const router = useRouter();
+  const { createUser } = useCreateUser();
   const handleClick = useCallback(async () => {
-    if (login) {
-      await login();
-      router.push(Route.root);
-    }
-  }, [login, router]);
+    if (!login) return;
+    const currentUser = await login();
+    currentUser && (await createUser(currentUser));
+  }, [createUser, login]);
 
   return <Button onClick={handleClick}>GitHubでサインイン</Button>;
 };

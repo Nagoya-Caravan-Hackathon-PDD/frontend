@@ -1,13 +1,19 @@
 import { useCallback } from 'react';
 import { useApiClient } from '@/shared/lib/axios';
+import { CurrentUser } from '@/shared/types/CurrentUser';
 
 export const useCreateUser = () => {
   const { api } = useApiClient();
   const createUser = useCallback(
-    async (githubId: string) => {
+    async (currentUser: CurrentUser) => {
       if (!api) return;
       try {
-        await api.v1.users.$post({ body: { github_id: githubId } });
+        await api.v1.users.$post({
+          body: { github_id: currentUser.userName ?? '' },
+          headers: {
+            Authorization: `Bearer ${currentUser.token}` ?? '',
+          },
+        });
       } catch (error) {
         throw error;
       }

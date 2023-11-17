@@ -7,7 +7,7 @@ export const usePostEncounters = () => {
     async (encounteredUserId: string, githubUserId: string) => {
       if (!api) return;
       try {
-        await api.encounters.$post({
+        await api.v1.encounters.$post({
           body: { encounted_user_id: encounteredUserId, user_id: githubUserId },
         });
       } catch (error) {

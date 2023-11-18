@@ -20,8 +20,8 @@ export const Join = () => {
     const gameId = url.split('/').pop();
     if (!gameId) return;
     const result = await joinGame(gameId);
-    setGameId(result?.gameId);
-    setGameServerToken(result?.gameServerToken);
+    // setGameId(result?.gameId);
+    // setGameServerToken(result?.gameServerToken);
   };
 
   const handleClickReady = useCallback(async () => {

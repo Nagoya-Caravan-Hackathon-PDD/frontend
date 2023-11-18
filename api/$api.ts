@@ -2,9 +2,9 @@ import { dataToURLString } from 'aspida';
 import type { Methods as Methods_1gukmr6 } from './v1/encounters';
 import type { Methods as Methods_1spogak } from './v1/encounters/_encounter_id@string';
 import type { Methods as Methods_n1pssi } from './v1/game';
-import type { Methods as Methods_siqaom } from './v1/game/_game_id@number/action';
-import type { Methods as Methods_1nv6l43 } from './v1/game/_game_id@number/ready';
 import type { Methods as Methods_1aoson } from './v1/game/_game_id@string';
+import type { Methods as Methods_1dmgbo2 } from './v1/game/_game_id@string/action';
+import type { Methods as Methods_1owtkkf } from './v1/game/_game_id@string/ready';
 import type { Methods as Methods_odq9yo } from './v1/users';
 import type { Methods as Methods_11doa8 } from './v1/users/_user_id@string';
 import type { AspidaClient, BasicHeaders } from 'aspida';
@@ -151,7 +151,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
           }`,
       },
       game: {
-        _game_id_number: (val2: number) => {
+        _game_id: (val2: string) => {
           const prefix2 = `${PATH1}/${val2}`;
 
           return {
@@ -161,11 +161,11 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
                * @param option.body - create game request
                */
               post: (option: {
-                body: Methods_siqaom['post']['reqBody'];
-                headers?: Methods_siqaom['post']['reqHeaders'] | undefined;
+                body: Methods_1dmgbo2['post']['reqBody'];
+                headers?: Methods_1dmgbo2['post']['reqHeaders'] | undefined;
                 config?: T | undefined;
               }) =>
-                fetch<void, BasicHeaders, Methods_siqaom['post']['status']>(
+                fetch<void, BasicHeaders, Methods_1dmgbo2['post']['status']>(
                   prefix,
                   `${prefix2}${PATH2}`,
                   POST,
@@ -176,11 +176,11 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
                * @param option.body - create game request
                */
               $post: (option: {
-                body: Methods_siqaom['post']['reqBody'];
-                headers?: Methods_siqaom['post']['reqHeaders'] | undefined;
+                body: Methods_1dmgbo2['post']['reqBody'];
+                headers?: Methods_1dmgbo2['post']['reqHeaders'] | undefined;
                 config?: T | undefined;
               }) =>
-                fetch<void, BasicHeaders, Methods_siqaom['post']['status']>(
+                fetch<void, BasicHeaders, Methods_1dmgbo2['post']['status']>(
                   prefix,
                   `${prefix2}${PATH2}`,
                   POST,
@@ -196,11 +196,11 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
                * @param option.body - create game request
                */
               post: (option: {
-                body: Methods_1nv6l43['post']['reqBody'];
-                headers?: Methods_1nv6l43['post']['reqHeaders'] | undefined;
+                body: Methods_1owtkkf['post']['reqBody'];
+                headers?: Methods_1owtkkf['post']['reqHeaders'] | undefined;
                 config?: T | undefined;
               }) =>
-                fetch<void, BasicHeaders, Methods_1nv6l43['post']['status']>(
+                fetch<void, BasicHeaders, Methods_1owtkkf['post']['status']>(
                   prefix,
                   `${prefix2}${PATH3}`,
                   POST,
@@ -211,11 +211,11 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
                * @param option.body - create game request
                */
               $post: (option: {
-                body: Methods_1nv6l43['post']['reqBody'];
-                headers?: Methods_1nv6l43['post']['reqHeaders'] | undefined;
+                body: Methods_1owtkkf['post']['reqBody'];
+                headers?: Methods_1owtkkf['post']['reqHeaders'] | undefined;
                 config?: T | undefined;
               }) =>
-                fetch<void, BasicHeaders, Methods_1nv6l43['post']['status']>(
+                fetch<void, BasicHeaders, Methods_1owtkkf['post']['status']>(
                   prefix,
                   `${prefix2}${PATH3}`,
                   POST,

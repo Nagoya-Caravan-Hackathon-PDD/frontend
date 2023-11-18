@@ -9,9 +9,9 @@ export const useCreateUser = () => {
       if (!api) return;
       try {
         await api.v1.users.$post({
-          body: { github_id: currentUser.userName ?? '' },
+          body: { github_id: currentUser.userName },
           headers: {
-            Authorization: `Bearer ${currentUser.token}` ?? '',
+            Authorization: `Bearer ${currentUser.token}`,
           },
         });
       } catch (error) {

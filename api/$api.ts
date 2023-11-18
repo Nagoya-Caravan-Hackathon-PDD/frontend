@@ -2,9 +2,9 @@ import { dataToURLString } from 'aspida';
 import type { Methods as Methods_1gukmr6 } from './v1/encounters';
 import type { Methods as Methods_1spogak } from './v1/encounters/_encounter_id@string';
 import type { Methods as Methods_n1pssi } from './v1/game';
-import type { Methods as Methods_123p34j } from './v1/game/_game_id@number';
 import type { Methods as Methods_siqaom } from './v1/game/_game_id@number/action';
 import type { Methods as Methods_1nv6l43 } from './v1/game/_game_id@number/ready';
+import type { Methods as Methods_1aoson } from './v1/game/_game_id@string';
 import type { Methods as Methods_odq9yo } from './v1/users';
 import type { Methods as Methods_11doa8 } from './v1/users/_user_id@string';
 import type { AspidaClient, BasicHeaders } from 'aspida';
@@ -151,7 +151,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
           }`,
       },
       game: {
-        _game_id: (val2: number) => {
+        _game_id_number: (val2: number) => {
           const prefix2 = `${PATH1}/${val2}`;
 
           return {
@@ -225,20 +225,26 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
                   .then((r) => r.body),
               $path: () => `${prefix}${prefix2}${PATH3}`,
             },
+          };
+        },
+        _game_id_string: (val2: string) => {
+          const prefix2 = `${PATH1}/${val2}`;
+
+          return {
             /**
              * Join Game
              * @param option.body - create game request
              * @returns success response
              */
             post: (option: {
-              body: Methods_123p34j['post']['reqBody'];
-              headers?: Methods_123p34j['post']['reqHeaders'] | undefined;
+              body: Methods_1aoson['post']['reqBody'];
+              headers?: Methods_1aoson['post']['reqHeaders'] | undefined;
               config?: T | undefined;
             }) =>
               fetch<
-                Methods_123p34j['post']['resBody'],
+                Methods_1aoson['post']['resBody'],
                 BasicHeaders,
-                Methods_123p34j['post']['status']
+                Methods_1aoson['post']['status']
               >(prefix, prefix2, POST, option).json(),
             /**
              * Join Game
@@ -246,14 +252,14 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
              * @returns success response
              */
             $post: (option: {
-              body: Methods_123p34j['post']['reqBody'];
-              headers?: Methods_123p34j['post']['reqHeaders'] | undefined;
+              body: Methods_1aoson['post']['reqBody'];
+              headers?: Methods_1aoson['post']['reqHeaders'] | undefined;
               config?: T | undefined;
             }) =>
               fetch<
-                Methods_123p34j['post']['resBody'],
+                Methods_1aoson['post']['resBody'],
                 BasicHeaders,
-                Methods_123p34j['post']['status']
+                Methods_1aoson['post']['status']
               >(prefix, prefix2, POST, option)
                 .json()
                 .then((r) => r.body),

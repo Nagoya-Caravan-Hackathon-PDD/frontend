@@ -12,19 +12,19 @@ export const useJoinGame = () => {
 
       try {
         // NOTE: backendの型が間違っている？
-        const result = await api.v1.game._game_id(gameId).$post({
-          body: {
-            user_id: currentUser.uid,
-            gameID: gameId,
-          },
-          headers: {
-            Authorization: `Bearer ${currentUser.token}`,
-          },
-        });
-        return {
-          gameId: result.game_id,
-          gameServerToken: result.game_server_token,
-        };
+        // const result = await api.v1.game._game_id(gameId).$post({
+        //   body: {
+        //     user_id: currentUser.uid,
+        //     gameID: gameId,
+        //   },
+        //   headers: {
+        //     Authorization: `Bearer ${currentUser.token}`,
+        //   },
+        // });
+        // return {
+        //   gameId: result.game_id,
+        //   gameServerToken: result.game_server_token,
+        // };
       } catch (error) {
         throw error;
       }

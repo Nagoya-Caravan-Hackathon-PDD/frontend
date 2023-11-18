@@ -10,14 +10,15 @@ import { theme } from '@/shared/lib/mantine/theme';
 import { Route } from '@/shared/types/Page';
 
 export const CreateGame = () => {
+  const baseUrl = window.location.origin;
   // TODO: サーバーからIDを受け取る
   const { createGame } = useCreateGame();
   const { readyGame } = useReadyGame();
   const [gameId, setGameId] = useState<string>();
   const [gameServerToken, setGameServerToken] = useState<string>();
   const url = useMemo(
-    () => process.env.NEXT_PUBLIC_BASE_URL + '/' + Route.game + '/' + gameId,
-    [gameId],
+    () => baseUrl + Route.game + '/' + gameId,
+    [baseUrl, gameId],
   );
 
   const [isReady, setIsReady] = useState(false);

@@ -8,11 +8,12 @@ type Props = {
     message: string;
     variant: MessageVariant;
   }[];
+  h?: number;
 };
-export const LogLikeCard = ({ messages }: Props) => {
+export const LogLikeCard = ({ messages, h }: Props) => {
   const logText = createLogText(messages);
   return (
-    <Card>
+    <Card h={h}>
       <Code>
         {logText.map((m, i) => {
           return <Box key={i}>{m}</Box>;

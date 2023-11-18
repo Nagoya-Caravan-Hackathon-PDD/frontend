@@ -1,13 +1,9 @@
+import { ImageProps } from '@mantine/core';
 import { Image } from '@/shared/components/common/Image';
 
-export const Python = () => {
+type Props = Omit<ImageProps, 'src' | 'alt'>;
+export const Python = (props: Props) => {
   return (
-    <Image
-      src={'/gitmon/5.svg'}
-      alt={'Python'}
-      width={200}
-      height={200}
-      fit="contain"
-    />
+    <Image src={'/gitmon/5.svg'} alt={'Python'} fit="contain" {...props} />
   );
 };

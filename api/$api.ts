@@ -225,6 +225,12 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
                   .then((r) => r.body),
               $path: () => `${prefix}${prefix2}${PATH3}`,
             },
+          };
+        },
+        _game_id_string: (val2: string) => {
+          const prefix2 = `${PATH1}/${val2}`;
+
+          return {
             /**
              * Join Game
              * @param option.body - create game request

@@ -1,14 +1,18 @@
-import { Profile } from './_components';
-import { Guard } from '@/shared/components/features/Guard';
-import { Heading } from '@/shared/components/layout';
+'use client';
+
+import { useRouter } from 'next/navigation';
+import { useEffect } from 'react';
+import { useAuth } from '@/shared/components/hooks/auth';
+import { Route } from '@/shared/types/Page';
 
 const Page = () => {
-  return (
-    <Guard>
-      <Heading title={'Profile'}>
-        <Profile />
-      </Heading>
-    </Guard>
-  );
+  const { currentUser } = useAuth();
+  const router = useRouter();
+  useEffect(() => {
+    if (currentUser) {
+      router.push(`${Route.profile}/${currentUser.uid}`);
+    }
+  }, [currentUser, router]);
+  return <></>;
 };
 export default Page;

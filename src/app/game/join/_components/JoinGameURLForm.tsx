@@ -6,12 +6,22 @@ import { Button } from '@/shared/components/common/Button';
 import { Form, TextInput } from '@/shared/components/common/Form';
 import { Center, Stack } from '@/shared/components/common/Layout';
 
-export const JoinGameURLForm = () => {
+type Props = {
+  onSubmit: (url: string) => void;
+};
+
+export const JoinGameURLForm = ({ onSubmit }: Props) => {
   const { control, handleSubmit } = useForm<Schema>({
     resolver: zodResolver(schema),
   });
 
-  const onSubmit = useCallback((values: Schema) => {}, []);
+  const submitUrl = useCallback(
+    (values: Schema) => {
+      if (!values.name) return;
+      onSubmit(values.name);
+    },
+    [onSubmit],
+  );
 
   return (
     <Form control={control}>
@@ -23,7 +33,7 @@ export const JoinGameURLForm = () => {
           label="room URL"
         />
         <Center>
-          <Button fullWidth maw={600} onClick={handleSubmit(onSubmit)}>
+          <Button fullWidth maw={600} onClick={handleSubmit(submitUrl)}>
             {'Join Room'}
           </Button>
         </Center>
